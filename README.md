@@ -1,5 +1,5 @@
 # sslv
-auto scanning to ssl vulnerability
+ssl vulnerability scanner
 
 # note
 *this project is still unfinished*
