@@ -1,7 +1,107 @@
 # sslv
 ssl vulnerability scanner
 
-# note
-*this project is still unfinished*
+# compile
+$ clang sslv.c -o sslv -Wall -Wextra -Os -s -lssl -lcrypto
 
-*date: 2025-07-11*
+# usage
+./sslv -a 4get.ca
+
+./sslv -r 4get.ca
+
+./sslv -p 443 -b 4get.ca
+
+./sslv -l 4get.ca
+
+# options
+```
+-p    specify port, default is 443
+-t    connection timeout, default is 4
+-r    verbose output
+-a    check all vulnerabilities, thats default
+-b    check for heartbleed vulnerability
+-o    check for poodle vulnerability
+-c    check for ccs injection vulnerability
+-f    check for freak vulnerability
+-l    check for logjam vulnerability
+-d    check for drown vulnerability
+-w    check for weak ciphers
+-e    check certificate validity
+```
+
+# support vulnerability
+```
+cve-2014-160, heartbleed
+cve-2014-3566, poodle
+cve-2014-0224, ccs
+cve-2015-0204, freak
+cve-2015-4000, logjam
+cve-2016-0800, drown
+```
+
+# support ciphers
+```
+TLS_AES_256_GCM_SHA384
+TLS_CHACHA20_POLY1305_SHA256
+TLS_AES_128_GCM_SHA256
+ECDHE-ECDSA-AES256-GCM-SHA384
+ECDHE-RSA-AES256-GCM-SHA384
+DHE-RSA-AES256-GCM-SHA384
+ECDHE-ECDSA-CHACHA20-POLY1305
+ECDHE-RSA-CHACHA20-POLY1305
+DHE-RSA-CHACHA20-POLY1305
+ECDHE-ECDSA-AES128-GCM-SHA256
+ECDHE-RSA-AES128-GCM-SHA256
+DHE-RSA-AES128-GCM-SHA256
+ECDHE-ECDSA-AES256-SHA384
+ECDHE-RSA-AES256-SHA384
+DHE-RSA-AES256-SHA256
+ECDHE-ECDSA-AES128-SHA256
+ECDHE-RSA-AES128-SHA256
+DHE-RSA-AES128-SHA256
+ECDHE-ECDSA-AES256-SHA
+ECDHE-RSA-AES256-SHA
+DHE-RSA-AES256-SHA
+ECDHE-ECDSA-AES128-SHA
+ECDHE-RSA-AES128-SHA
+DHE-RSA-AES128-SHA
+RSA-PSK-AES256-GCM-SHA384
+DHE-PSK-AES256-GCM-SHA384
+RSA-PSK-CHACHA20-POLY1305
+DHE-PSK-CHACHA20-POLY1305
+ECDHE-PSK-CHACHA20-POLY1305
+AES256-GCM-SHA384
+PSK-AES256-GCM-SHA384
+PSK-CHACHA20-POLY1305
+RSA-PSK-AES128-GCM-SHA256
+DHE-PSK-AES128-GCM-SHA256
+AES128-GCM-SHA256
+PSK-AES128-GCM-SHA256
+AES256-SHA256
+AES128-SHA256
+ECDHE-PSK-AES256-CBC-SHA384
+ECDHE-PSK-AES256-CBC-SHA
+SRP-RSA-AES-256-CBC-SHA
+SRP-AES-256-CBC-SHA
+RSA-PSK-AES256-CBC-SHA384
+DHE-PSK-AES256-CBC-SHA384
+RSA-PSK-AES256-CBC-SHA
+DHE-PSK-AES256-CBC-SHA
+AES256-SHA
+PSK-AES256-CBC-SHA384
+PSK-AES256-CBC-SHA
+ECDHE-PSK-AES128-CBC-SHA256
+ECDHE-PSK-AES128-CBC-SHA
+SRP-RSA-AES-128-CBC-SHA
+SRP-AES-128-CBC-SHA
+RSA-PSK-AES128-CBC-SHA256
+DHE-PSK-AES128-CBC-SHA256
+RSA-PSK-AES128-CBC-SHA
+DHE-PSK-AES128-CBC-SHA
+AES128-SHA
+PSK-AES128-CBC-SHA256
+PSK-AES128-CBC-SHA
+```
+
+# example
+<img width="527" height="346" alt="image" src="https://github.com/user-attachments/assets/aba4e097-7de7-4692-a1f7-bfbffee6355f" />
