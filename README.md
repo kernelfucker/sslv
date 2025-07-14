@@ -31,7 +31,7 @@ $ clang sslv.c -o sslv -Wall -Wextra -Os -s -lssl -lcrypto
 
 # support vulnerability
 ```
-cve-2014-160, heartbleed
+cve-2014-0160, heartbleed
 cve-2014-3566, poodle
 cve-2014-0224, ccs
 cve-2015-0204, freak
