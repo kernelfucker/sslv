@@ -5,13 +5,13 @@ ssl vulnerability scanner
 $ clang sslv.c -o sslv -Wall -Wextra -Os -s -lssl -lcrypto
 
 # usage
-./sslv -a 4get.ca
+$ ./sslv -a 4get.ca
 
-./sslv -r 4get.ca
+$ ./sslv -r 4get.ca
 
-./sslv -p 443 -b 4get.ca
+$ ./sslv -p 443 -b 4get.ca
 
-./sslv -l 4get.ca
+$ ./sslv -l 4get.ca
 
 # options
 ```
